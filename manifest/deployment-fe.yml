@@ -1,0 +1,21 @@
+# deployment.yml
+# kubectl apply -f deployment-fe.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-fe
+  namespace: joseg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-fe
+  template:
+    metadata:
+      labels:
+        app: frontend-fe
+    spec:
+      containers:
+      - name: frontend-fe
+        image: jose2506/frontend:latest         # Reemplaza con tu imagen Docker
+       
